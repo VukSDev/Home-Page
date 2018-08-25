@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Home Page</title>
+</head>
+<body>
+  <section class="main-container">
+    <section class="section-header">
+      <div class="section-header__text">
+        internet
+      </div>
+    </section>
+    <section class="section-todo">
+      <div class="section-todo__heading">
+        TODO
+      </div>
+      <div class="section-todo__input">
+        <input type="text" placeholder="Add an activity..." id="item">
+        <button id="add">+</button>
+      </div>
+
+      <!-- Uncomplete tasks -->
+      <ul class="section-todo__list" id="todo">
+        <!-- <li>
+          This is an item
+          <div class="section-todo__list--buttons">
+            <button class="section-todo__list--buttons---complete">OK</button>
+            <button class="section-todo__list--buttons---remove">X</button>
+          </div>
+        </li> -->
+      </ul>
+
+      <!-- Completed tasks -->
+      <ul class="section-todo__list" id="completed">
+        <!-- <li>
+          This is an item
+          <div class="section-todo__list--buttons">
+            <button class="section-todo__list--buttons---complete">OK</button>
+            <button class="section-todo__list--buttons---remove">X</button>
+          </div>
+        </li> -->
+      </ul>
+    </section>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

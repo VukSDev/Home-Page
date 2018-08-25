@@ -1,0 +1,171 @@
+.main-container {
+  background-color: $color-grey-darker;
+  width: 98%;
+  height: 95%;
+  @include absCenter;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+  "a a b"
+  "c c b";
+  backface-visibility: hidden;
+}
+
+.section-header {
+  grid-area: a;
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .3s;
+    padding: 5rem 5rem 0 5rem;
+    opacity: .8;
+
+    &:hover {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+}
+
+.section-todo {
+  grid-area: b;
+  background-color: $color-grey-darkest;
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .3s;
+    padding: 5rem 5rem 0 5rem;
+    opacity: .8;
+
+    &:hover {
+      cursor: default;
+      opacity: 1;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-top: 3rem;
+    text-align: center;
+    position: relative;
+
+    & input {
+      background-color: rgba($color-white, .1);
+      color: $color-grey-light;
+      text-align: left;
+      padding: 0 2rem;
+      width: 60%;
+      height: 3rem;
+      border: 0;
+      border-radius: 3px;
+      box-shadow: none;
+      outline: none;
+      z-index: 10;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    & button {
+      background-color: $color-grey-darker;
+      color: $color-grey-light;
+      font-size: 3rem;
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      right: 6rem;
+      z-index: 20;
+      border-radius: 3px;
+      box-shadow: none;
+      border: 0;
+      transition: all .3s;
+
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__list {
+    width: 70%;
+    font-size: 1.6rem;
+    padding: 4rem 7rem;
+    list-style-type: none;
+    text-indent: 2rem;
+
+    & li {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      border-radius: 3px;
+      background-color: $color-grey-darker;
+      font-size: 1.4rem;
+      position: relative;
+      padding-right: 100px;
+      transition: all .3s;
+      animation: scaleIn .3s;
+      backface-visibility: hidden;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+
+    &--buttons {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      & button {
+        width: 50px;
+        height: 50px;
+        float: left;
+        background: none;
+        position: relative;
+        border: 0px;
+        box-shadow: none;
+        outline: none;
+
+        &:last-of-type:before {
+          content:'';
+          width: 1px;
+          height: 30px;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background: rgba($color-grey-light, 0.1);
+        }
+      }
+
+      &---complete {
+        color: $color-grey-light;
+        transition: all .3s;
+
+        &:hover {
+          color: $color-green-light;
+          cursor: pointer;
+        }
+      }
+
+      &---remove {
+        color: $color-grey-light;
+        transition: all .3s;
+
+        &:hover {
+          color: $color-red-light;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

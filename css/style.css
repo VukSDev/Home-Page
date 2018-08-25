@@ -1,0 +1,150 @@
+.main-container {
+  background-color: #333;
+  width: 98%;
+  height: 95%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "a a b" "c c b";
+  backface-visibility: hidden; }
+
+.section-header {
+  grid-area: a; }
+  .section-header__text {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .3s;
+    padding: 5rem 5rem 0 5rem;
+    opacity: .8; }
+    .section-header__text:hover {
+      cursor: default;
+      opacity: 1; }
+
+.section-todo {
+  grid-area: b;
+  background-color: #222; }
+  .section-todo__heading {
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .3s;
+    padding: 5rem 5rem 0 5rem;
+    opacity: .8; }
+    .section-todo__heading:hover {
+      cursor: default;
+      opacity: 1; }
+  .section-todo__input {
+    width: 100%;
+    padding-top: 3rem;
+    text-align: center;
+    position: relative; }
+    .section-todo__input input {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #999;
+      text-align: left;
+      padding: 0 2rem;
+      width: 60%;
+      height: 3rem;
+      border: 0;
+      border-radius: 3px;
+      box-shadow: none;
+      outline: none;
+      z-index: 10; }
+      .section-todo__input input:hover {
+        cursor: pointer; }
+    .section-todo__input button {
+      background-color: #333;
+      color: #999;
+      font-size: 3rem;
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      right: 6rem;
+      z-index: 20;
+      border-radius: 3px;
+      box-shadow: none;
+      border: 0;
+      transition: all .3s; }
+      .section-todo__input button:hover {
+        color: white;
+        cursor: pointer; }
+  .section-todo__list {
+    width: 70%;
+    font-size: 1.6rem;
+    padding: 4rem 7rem;
+    list-style-type: none;
+    text-indent: 2rem; }
+    .section-todo__list li {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+      border-radius: 3px;
+      background-color: #333;
+      font-size: 1.4rem;
+      position: relative;
+      padding-right: 100px;
+      transition: all .3s;
+      animation: scaleIn .3s;
+      backface-visibility: hidden; }
+      .section-todo__list li:last-of-type {
+        margin: 0; }
+    .section-todo__list--buttons {
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .section-todo__list--buttons button {
+        width: 50px;
+        height: 50px;
+        float: left;
+        background: none;
+        position: relative;
+        border: 0px;
+        box-shadow: none;
+        outline: none; }
+        .section-todo__list--buttons button:last-of-type:before {
+          content: '';
+          width: 1px;
+          height: 30px;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background: rgba(153, 153, 153, 0.1); }
+      .section-todo__list--buttons---complete {
+        color: #999;
+        transition: all .3s; }
+        .section-todo__list--buttons---complete:hover {
+          color: lightgreen;
+          cursor: pointer; }
+      .section-todo__list--buttons---remove {
+        color: #999;
+        transition: all .3s; }
+        .section-todo__list--buttons---remove:hover {
+          color: #FF5733;
+          cursor: pointer; }
+
+html {
+  font-size: 62.5%;
+  background-color: #222;
+  color: #999; }
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.7; }
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); }
+  50% {
+    opacity: .5; }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
