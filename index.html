@@ -13,9 +13,21 @@
 </head>
 <body>
   <section class="main-container">
-    <section class="section-header">
-      <div class="section-header__text">
-        internet
+    <section class="section-main">
+      <div id="object1">
+        <img src="imgs/Clouds.png" alt="">
+      </div>
+      <div id="object2">
+        <img src="imgs/Character.png" alt="">
+      </div>
+      <div id="object3">
+        <img src="imgs/Gun.png" alt="">
+      </div>
+      <a href="https://4chan.org/g/" target="_blank"><img src="imgs/4chan.png" class="section-main__link"></a>
+      <a href="https://youtube.com" target="_blank"><img src="imgs/youtube.png" class="section-main__link"></a>
+      <a href="https://github.com" target="_blank"><img src="imgs/github.png" class="section-main__link"></a>
+      <a href="https://gmail.com" target="_blank"><img src="imgs/gmail.png" class="section-main__link"></a>
+      <div class="section-main__text">
       </div>
     </section>
     <section class="section-todo">
@@ -29,28 +41,48 @@
 
       <!-- Uncomplete tasks -->
       <ul class="section-todo__list" id="todo">
-        <!-- <li>
-          This is an item
-          <div class="section-todo__list--buttons">
-            <button class="section-todo__list--buttons---complete">OK</button>
-            <button class="section-todo__list--buttons---remove">X</button>
-          </div>
-        </li> -->
-      </ul>
-
-      <!-- Completed tasks -->
-      <ul class="section-todo__list" id="completed">
-        <!-- <li>
-          This is an item
-          <div class="section-todo__list--buttons">
-            <button class="section-todo__list--buttons---complete">OK</button>
-            <button class="section-todo__list--buttons---remove">X</button>
-          </div>
-        </li> -->
       </ul>
     </section>
   </section>
 
   <script src="js/main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var object1=$('#object1');
+      var object2=$('#object2');
+      var object3=$('#object3');
+
+      var layer=$('#layer');
+
+      $(window).mousemove(function(e){
+        var valueX=(e.pageX * -1 / 25);
+        var valueY=(e.pageY * -1 / 25);
+
+        object1.css({
+          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
+        })
+      });
+
+      $(window).mousemove(function(e){
+        var valueX=(e.pageX * -1 / 20);
+        var valueY=(e.pageY * -1 / 20);
+
+        object2.css({
+          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
+        })
+      });
+
+      $(window).mousemove(function(e){
+        var valueX=(e.pageX * -1 / 15);
+        var valueY=(e.pageY * -1 / 15);
+
+        object3.css({
+          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
+        })
+      });
+    });
+    </script>
+
 </body>
 </html>

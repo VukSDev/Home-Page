@@ -9,22 +9,29 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "a a b" "c c b";
+  grid-template-areas: "a a b" "a a b";
   backface-visibility: hidden; }
 
-.section-header {
-  grid-area: a; }
-  .section-header__text {
+.section-main {
+  grid-area: a;
+  position: relative;
+  overflow: hidden;
+  text-align: center; }
+  .section-main__text {
     font-size: 3rem;
+    color: #fff;
     font-weight: 300;
     text-transform: uppercase;
-    text-align: center;
     transition: all .3s;
-    padding: 5rem 5rem 0 5rem;
-    opacity: .8; }
-    .section-header__text:hover {
-      cursor: default;
-      opacity: 1; }
+    padding: 5rem 5rem 0 5rem; }
+  .section-main__link {
+    width: 64px;
+    padding: 30px;
+    transition: all .3s;
+    z-index: 99; }
+    .section-main__link:hover {
+      cursor: pointer;
+      transform: scale(1.1); }
 
 .section-todo {
   grid-area: b;
@@ -130,6 +137,50 @@
         .section-todo__list--buttons---remove:hover {
           color: #FF5733;
           cursor: pointer; }
+
+#object1 {
+  position: absolute;
+  bottom: 0;
+  z-index: -5;
+  background-image: url("imgs/Clouds.png");
+  background-size: cover;
+  width: 125%;
+  height: 100vh; }
+  #object1 img {
+    width: 120%;
+    filter: blur(2px); }
+
+#object2 {
+  position: absolute;
+  bottom: 0;
+  z-index: -10;
+  background-image: url("imgs/Character.png");
+  background-size: cover;
+  width: 125%;
+  height: 100vh; }
+  #object2 img {
+    width: 120%;
+    filter: blur(0.8px); }
+
+#object3 {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("imgs/Gun.png");
+  background-size: cover;
+  width: 125%;
+  height: 100vh; }
+  #object3 img {
+    width: 120%; }
+
+#layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  opacity: 0; }
 
 @media (max-width: 1080) {
   .section-todo__input button {
