@@ -10,6 +10,13 @@ function buttonClick() {
   }
 }
 
+function buttonEnter(event) {
+  event.preventDefault();
+  if(event.keyCode === 13) {
+    document.getElementById('add').click();
+  }
+}
+
 function completeItem() {
   var parent = this.parentNode.parentNode;
 
@@ -62,3 +69,5 @@ function addItemTodo(text) {
 }
 
 document.getElementById('add').addEventListener('click', buttonClick);
+
+document.addEventListener("keyup", buttonEnter);
