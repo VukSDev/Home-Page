@@ -46,43 +46,6 @@
   </section>
 
   <script src="js/main.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      var object1=$('#object1');
-      var object2=$('#object2');
-      var object3=$('#object3');
-
-      var layer=$('#layer');
-
-      $(window).mousemove(function(e){
-        var valueX=(e.pageX * -1 / 25);
-        var valueY=(e.pageY * -1 / 25);
-
-        object1.css({
-          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
-        })
-      });
-
-      $(window).mousemove(function(e){
-        var valueX=(e.pageX * -1 / 20);
-        var valueY=(e.pageY * -1 / 20);
-
-        object2.css({
-          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
-        })
-      });
-
-      $(window).mousemove(function(e){
-        var valueX=(e.pageX * -1 / 15);
-        var valueY=(e.pageY * -1 / 15);
-
-        object3.css({
-          'transform':'translate3D('+valueX+'px,'+valueY+'px, 0)'
-        })
-      });
-    });
-    </script>
 
 </body>
 </html>
